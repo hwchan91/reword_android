@@ -67,7 +67,7 @@ public class MainActivity extends FragmentActivity {
         if (!DetectConnection.checkInternetConnection(this)) {
             mWebView.loadUrl("file:///android_asset/landing.html");
         } else {
-            mWebView.loadUrl("http://rewordgame.herokuapp.com"); //change
+            mWebView.loadUrl("https://rewordgame.herokuapp.com"); //change
         }
     }
 
@@ -101,8 +101,8 @@ public class MainActivity extends FragmentActivity {
         WebBackForwardList mWebBackForwardList = mWebView.copyBackForwardList();
         int currIndex = mWebBackForwardList.getCurrentIndex();
         WebHistoryItem item = mWebBackForwardList.getItemAtIndex(currIndex - 1);
-        String previousUrl = item.getUrl();
-        if (currIndex > 0 && !previousUrl.equals("file:///android_asset/landing.html")) {
+
+        if (currIndex > 0 && !item.getUrl().equals("file:///android_asset/landing.html")) {
             mWebView.goBack();
         } else {
             moveTaskToBack(true);
