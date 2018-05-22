@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script>
+            function refresh() {
+                browser.redirect();
+            }
+        </script>
+    </head>
+
+    <body>
+        <style>
+                body {
+                  background: white;
+                  font-family: Sans-serif;
+                }
+
+                .wrap {
+                  margin: 0 auto;
+                  text-align: center;
+                  position: fixed;
+                  top: 50%;
+                  left: 50%;
+                  width: 100%;
+                  transform: translate(-50%, -50%);
+                  white-space: nowrap;
+                  font-size: 5vh;
+                }
+
+                .refresh_btn {
+                    border: 1px solid black;
+                    border-radius: 3px;
+                    width: 50vw;
+                    margin: 10px auto;
+                    padding: 2px;
+                }
+
+            </style>
+
+        <div class="wrap">
+            No internet access
+            <div class="refresh_btn" onclick="refresh();">RELOAD</div>
+        </div>
+    </body>
+</html>
+
